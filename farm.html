@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community Feedback</title>
+  <style>
+    /* Styling for the top image banner */
+    .top-banner {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .top-banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Rest of your styles */
+    .a {
+      padding-top: 6%;
+    }
+
+    .b {
+      background-color: #7ee32569;
+      height: auto;
+      font-size: 20px;
+      padding: 3%;
+      overflow-wrap: break-word;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .c {
+      padding-right: 5px;
+      margin: 0 5px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .navbar-nav {
+      padding-left: 0;
+    }
+
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .form-section {
+      flex: 1 1 50%;
+      min-width: 300px;
+      padding: 2%;
+      background-color: #7ee32569;
+      border-radius: 8px;
+    }
+
+    .img-section {
+      flex: 1 1 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img-section img {
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- Top Banner Image Section -->
+  <div class="top-banner">
+    <img src="banner-image.jpg" alt="Farm Observation Banner">
+  </div>
+
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand mb-0 h1">
+        <img class="d-inline-block align-top rounded-circle" src="kiwi.PNG" width="30" height="30" alt="Logo">
+         <b> Green Roots </b>
+      </a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav ms-auto me-5 grid gap-5 list-unstyled">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Homepage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="farm.html">Community feedback</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Warehouse Inspector</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Nutrition Specialist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Transportation Inspector</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">View Grading Criterias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="a">
+    <div class="container-fluid">
+      <div class="form-container">
+        
+        <!-- Form Section -->
+        <div class="form-section text-center">
+          <h2>Farm Observation Feedback Form</h2>
+          <form action="#" method="post" class="w-100">
+            <!-- Crop Health Section -->
+            <div class="mb-3">
+              <label for="cropHealth" class="form-label">Crop Health Observation</label>
+              <textarea class="form-control" id="cropHealth" name="cropHealth" rows="3" placeholder="Describe the condition of crops, any visible diseases, etc." required></textarea>
+            </div>
+
+            <!-- Livestock Conditions Section -->
+            <div class="mb-3">
+              <label for="livestockCondition" class="form-label">Livestock Condition Observation</label>
+              <textarea class="form-control" id="livestockCondition" name="livestockCondition" rows="3" placeholder="Describe the health of livestock, feeding conditions, etc." required></textarea>
+            </div>
+
+            <!-- Soil Quality Section -->
+            <div class="mb-3">
+              <label for="soilQuality" class="form-label">Soil Quality Observation</label>
+              <textarea class="form-control" id="soilQuality" name="soilQuality" rows="3" placeholder="Describe soil appearance, compaction, moisture level, etc." required></textarea>
+            </div>
+
+            <!-- Water Availability Section -->
+            <div class="mb-3">
+              <label for="waterAvailability" class="form-label">Water Availability</label>
+              <select class="form-select" id="waterAvailability" name="waterAvailability" required>
+                <option value="">Select water availability level</option>
+                <option value="Adequate">Adequate</option>
+                <option value="Limited">Limited</option>
+                <option value="Scarce">Scarce</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="pestDisease" class="form-label">Pest/Disease Observation</label>
+              <textarea class="form-control" id="pestDisease" name="pestDisease" rows="3" placeholder="Mention any pests observed, signs of plant diseases, etc." required></textarea>
+            </div>
+
+            <!-- General Comments Section -->
+           
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+          </form>
+        </div>
+
+        <!-- Image Section -->
+        <div class="img-section">
+          <img src="Capture.PNG" alt="Farm Observation Image">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
