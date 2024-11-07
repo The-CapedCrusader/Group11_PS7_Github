@@ -1,1204 +1,1183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>GreenRoots – Highlights organic and eco-friendly farming practices.</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Organic Farming, Eco-friendly Agriculture" name="keywords">
-    <meta content="GreenRoots promotes sustainable and organic farming practices" name="description">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
+    <title>GreenRoots Dashboard</title>
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <style>
-        :root {
-            --primary: #34AD54;
-            --secondary: #FF9933;
-            --light: #F6FFF2;
-            --dark: #263A4F;
-        }
-
-        .btn {
-            font-family: 'Roboto', sans-serif;
-            letter-spacing: 1px;
-            font-weight: 700;
-            transition: .5s;
-        }
-
-        .btn-primary {
-            color: #FFFFFF;
-            background-color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .btn-square {
-            width: 36px;
-            height: 36px;
-        }
-
-        .btn-sm-square {
-            width: 28px;
-            height: 28px;
-        }
-
-        .btn-lg-square {
-            width: 46px;
-            height: 46px;
-        }
-
-        .bg-hero {
-            background: url(../img/carousel-1.jpg) top right no-repeat;
-            background-size: cover;
-        }
-
-        #map {
-            height: 400px;
-            width: 100%;
-            z-index: 1;
-        }
-
-        .back-to-top {
-            position: fixed;
-            display: none;
-            right: 30px;
-            bottom: 30px;
-            z-index: 99;
-        }
-
-        .bg-quality {
-            background: linear-gradient(rgba(52, 173, 84, .7), rgba(52, 173, 84, .7)), url(../img/carousel-2.jpg) center center no-repeat;
-            background-size: cover;
-        }
-
-        .bg-tracking {
-            background: linear-gradient(rgba(255, 153, 51, .7), rgba(255, 153, 51, .7)), url(../img/carousel-1.jpg) center center no-repeat;
-            background-size: cover;
-        }
-    </style>
-</head>
-
-<body>
-  <!-- Topbar Start -->
-<div class="container-fluid px-5 d-none d-lg-block bg-white">
-    <div class="row gx-5 py-3 align-items-center">
-        <div class="col-lg-3">
-            <div class="d-flex align-items-center justify-content-start">
-                <img src="" class="me-2">
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="d-flex align-items-center justify-content-center">
-                <a href="index.html" class="navbar-brand ms-lg-5 text-decoration-none">
-                    <div class="text-center">
-                        <h1 class="m-0 display-4" style="color: #b83024; font-weight: 600;">
-                            <svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                  <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#2962FF" />  
-                                    <stop offset="100%" stop-color="#0041C2" /> 
-                                  </linearGradient>
-                                </defs>
-                              
-                                <g transform="translate(100, 40)"> 
-                                  <path 
-                                    d="M 0 0 
-                                       C -20 -40, -40 -20, -40 0
-                                       C -40 20, -20 40, 0 0
-                                       M -40 0
-                                       C -60 -20, -80 20, -40 0
-                                       M -40 0
-                                       C -20 -20, 20 -20, 40 0
-                                       C 20 20, -20 20, -40 0" 
-                                    fill="url(#leafGradient)" 
-                                    stroke="#1976D2"    
-                                    stroke-width="3" 
-                                    stroke-linejoin="round" />
-                                </g>
-                              
-                                <text 
-                                  x="50%" 
-                                  y="80%"  
-                                  text-anchor="middle" 
-                                  font-family="Roboto, sans-serif" 
-                                  font-size="24" 
-                                  font-weight="bold" 
-                                  fill="#1976D2"    
-                                  letter-spacing="2"> 
-                                  GreenRoots
-                                </text>
-                              </svg>
-                        </h1>
-                        <p class="text-muted small mt-2">Smart Agricultural Management System</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/lineicons.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
+    <link rel="stylesheet" href="assets/css/fullcalendar.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- ======== Preloader =========== -->
+    <div id="preloader">
+      <div class="spinner"></div>
     </div>
-</div>
-<!-- Topbar End -->
+    <!-- ======== Preloader =========== -->
 
-<!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm py-2">
-    <div class="container-fluid px-5">
-        <a href="index.html" class="navbar-brand d-lg-none">
-            <h1 class="m-0 text-primary fs-4">
-                <span style="color: #b83024;">Green</span>Roots
-            </h1>
+    <!-- ======== sidebar-nav start =========== -->
+    <aside class="sidebar-nav-wrapper">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <img src="assets/images/logo/logo.svg" alt="logo" />
         </a>
-        
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav mx-auto">
-                <a href="index.html" class="nav-item nav-link px-3">Home</a>
-                <a href="dashboard.html" class="nav-item nav-link px-3">Dashboard</a>
-                <a href="product-status.html" class="nav-item nav-link px-3">Product Status</a>
-                <a href="quality-reports.html" class="nav-item nav-link px-3">Quality Reports</a>
-                <a href="feedback.html" class="nav-item nav-link px-3">Feedback/Complaints</a>
-                <a href="track.html" class="nav-item nav-link px-3">Track Produce</a>
-                <a href="support.html" class="nav-item nav-link px-3">Support</a>
-            </div>
-        </div>
-    </div>
-</nav>
-<!-- Navbar End -->
-
-<style>
-/* Custom Styles */
-:root {
-    --primary-color: #00873C;
-    --secondary-color: #b83024;
-    --hover-color: #006C2F;
-}
-
-/* Navbar Styles */
-.navbar {
-    transition: all 0.3s ease;
-}
-
-.navbar-nav .nav-link {
-    color: #333;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.navbar-nav .nav-link:hover {
-    color: var(--primary-color);
-}
-
-.navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover::after {
-    width: 100%;
-}
-
-/* Button Styles */
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-primary:hover {
-    background-color: var(--hover-color);
-    border-color: var(--hover-color);
-}
-
-.btn-outline-primary {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-/* Mobile Responsive Styles */
-@media (max-width: 991.98px) {
-    .navbar-nav {
-        padding: 1rem 0;
-    }
-    
-    .navbar-nav .nav-link {
-        padding: 0.75rem 1rem;
-        border-bottom: 1px solid #eee;
-    }
-
-    .navbar-nav .nav-link:last-child {
-        border-bottom: none;
-    }
-    
-    .navbar-collapse {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        margin-top: 1rem;
-    }
-}
-</style>
-
- <!-- Hero Section Start -->
- <div class="hero-container">
-    <div class="hero-content">
-        <h1 class="hero-title">Smart Agricultural Management System</h1>
-        <p class="hero-description">Monitor your produce quality, packaging, and transportation in real-time</p>
-        <button class="hero-button">Check Grading Status</button>
-    </div>
-</div>
-
-<style>
-    .hero-container {
-        background: linear-gradient(135deg, #2F855A, #276749);
-        padding: 6rem 2rem;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .hero-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAgMjBMNDAgMjBMNDAgNDBMMjAgNDBMMjAgMjBaTTAgMjBMMjAgMjBMMjAgNDBMMCAyMEwwIDBMMjAgMEwyMCAyMEwwIDIwWiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=');
-        opacity: 0.1;
-    }
-    
-    .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-        color: white;
-        position: relative;
-        z-index: 1;
-    }
-    
-    .hero-title {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-    }
-    
-    /* Enhanced Facts Section */
-    .facts {
-        background: linear-gradient(135deg, #3182CE, #2B6CB0);
-    }
-    
-    .facts .rounded-circle {
-        width: 80px;
-        height: 80px;
-        transition: transform 0.3s ease;
-    }
-    
-    .facts .rounded-circle:hover {
-        transform: scale(1.1);
-    }
-    
-    .facts .display-5 {
-        font-weight: 700;
-        background: -webkit-linear-gradient(45deg, #ffffff, #E2E8F0);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    
-    /* Enhanced Grading Section */
-    .bg-quality {
-        background: linear-gradient(135deg, #4C51BF, #434190);
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-    
-    .bg-quality:hover {
-        transform: translateY(-5px);
-    }
-    
-    .bg-tracking {
-        background: linear-gradient(135deg, #2B6CB0, #2C5282);
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-    
-    .bg-tracking:hover {
-        transform: translateY(-5px);
-    }
-    
-    /* Enhanced Card Styles */
-    .card {
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Enhanced Progress Bars */
-    .progress {
-        height: 8px;
-        border-radius: 4px;
-        overflow: hidden;
-    }
-    
-    .progress-bar {
-        transition: width 1s ease-in-out;
-    }
-    
-    /* Enhanced Alert Styles */
-    .alert {
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
-    }
-    
-    .alert:hover {
-        transform: translateX(5px);
-    }
-    
-    /* Enhanced Table Styles */
-    .table-responsive {
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        overflow: hidden;
-    }
-    
-    .table th {
-        background-color: #F7FAFC;
-        border-top: none;
-        font-weight: 600;
-    }
-    
-    .table td {
-        vertical-align: middle;
-    }
-    
-    /* Badge Enhancements */
-    .badge {
-        padding: 0.5em 1em;
-        font-weight: 500;
-        letter-spacing: 0.025em;
-        border-radius: 9999px;
-    }
-    
-    .bg-success {
-        background: linear-gradient(135deg, #48BB78, #38A169);
-    }
-    
-    .bg-warning {
-        background: linear-gradient(135deg, #ECC94B, #D69E2E);
-    }
-    
-    /* Map Container Enhancement */
-    #map {
-        height: 400px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-    }
-    
-    /* Footer Enhancement */
-    .bg-footer {
-        background: linear-gradient(135deg, #2D3748, #1A202C);
-    }
-    
-    /* Back to Top Button Enhancement */
-    .back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #4C51BF, #434190);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
-    }
-    
-    .back-to-top:hover {
-        transform: translateY(-5px);
-    }
-    
-    .back-to-top.visible {
-        opacity: 1;
-    }
-    </style>
-<!-- Hero Section End -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
-<!-- Features Start -->
-<div class="container-fluid banner mb-5">
-    <div class="container">
-        <div class="row gx-0">
-          <div class="col-md-6">
-            <div class="bg-primary bg-quality d-flex flex-column justify-content-center p-5" style="height: 300px;">
-              <h5 class="text-white mb-3">Standardized Grading System</h5>
-              <p class="text-white">Access real-time grading reports and quality assessments from certified inspectors for your produce.</p>
-              <a href="#" class="btn btn-light mt-3">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="bg-tracking d-flex flex-column justify-content-center p-5" style="height: 300px;">
-              <h5 class="text-white mb-3">Advanced Transport Tracking</h5>
-              <p class="text-white">Monitor your produce's journey with GPS tracking and real-time temperature control updates.</p>
-              <a href="#" class="btn btn-light mt-3">Explore Tracking</a>
-            </div>
-          </div>
-        </div>
       </div>
-</div>
-<!-- Features End -->
-
-<!-- About Start -->
-<div class="container-fluid about pt-5">
-    <div class="container">
-        <div class="row gx-5">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <div style="background-color: #fff9e6; padding: 20px; border-radius: 8px; width: 100%; height: 400px;">
-                    <h2 style="color: #e67300; font-size: 24px; margin-bottom: 20px;">GreenRoots</h2>
-                    <svg width="100%" height="300" viewBox="0 0 400 300">
-                        <!-- Pie Chart -->
-                        <g transform="translate(200, 150)">
-                            <!-- 58% segment (orange) -->
-                            <path d="M 0 0 L 100 0 A 100 100 0 0 1 -51 86.6 Z" fill="#FF8042"/>
-                            <!-- 32% segment (green) -->
-                            <path d="M 0 0 L -51 86.6 A 100 100 0 0 1 -95.1 -31 Z" fill="#00C49F"/>
-                            <!-- 10% segment (yellow) -->
-                            <path d="M 0 0 L -95.1 -31 A 100 100 0 0 1 100 0 Z" fill="#FFBB28"/>
-                        </g>
-                        
-                        <!-- Legend -->
-                        <g transform="translate(320, 120)">
-                            <rect x="0" y="0" width="15" height="15" fill="#FF8042"/>
-                            <text x="25" y="12" font-size="14">Vegetables (58%)</text>
-                            
-                            <rect x="0" y="25" width="15" height="15" fill="#00C49F"/>
-                            <text x="25" y="37" font-size="14">Fruits (32%)</text>
-                            
-                            <rect x="0" y="50" width="15" height="15" fill="#FFBB28"/>
-                            <text x="25" y="62" font-size="14">Other (10%)</text>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-            <div class="col-lg-6 pb-5">
-                <div class="mb-3 pb-2">
-                    <h6 class="text-primary text-uppercase">Farmer Dashboard</h6>
-                    <h1 class="display-5">Streamlined Management for Your Agricultural Products</h1>
-                </div>
-                <p class="mb-4">Access comprehensive tools for quality assessment, packaging management, and transportation tracking all in one place.</p>
-                <div class="row gx-5 gy-4">
-                    <div class="col-sm-6">
-                        <i class="fa fa-check-circle display-1 text-secondary"></i>
-                        <h4>Quality Certification</h4>
-                        <p class="mb-0">Get your produce graded and certified by government specialists.</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <i class="fa fa-truck display-1 text-secondary"></i>
-                        <h4>Smart Logistics</h4>
-                        <p class="mb-0">Track transportation and maintain optimal conditions for your produce.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- About End -->
-
-<!-- Stats Start -->
-<div class="container-fluid bg-primary facts py-5 mb-5">
-    <div class="container py-5">
-        <div class="row gx-5 gy-4">
-            <div class="col-lg-3 col-md-6">
-                <div class="d-flex">
-                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                        <i class="fa fa-star fs-4 text-white"></i>
-                    </div>
-                    <div class="ps-4">
-                        <h5 class="text-white">Grading Success</h5>
-                        <h1 class="display-5 text-white mb-0" data-toggle="counter-up">95</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="d-flex">
-                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                        <i class="fa fa-box fs-4 text-white"></i>
-                    </div>
-                    <div class="ps-4">
-                        <h5 class="text-white">Packages Tracked</h5>
-                        <h1 class="display-5 text-white mb-0" data-toggle="counter-up">850</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="d-flex">
-                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                        <i class="fa fa-temperature-high fs-4 text-white"></i>
-                    </div>
-                    <div class="ps-4">
-                        <h5 class="text-white">Quality Maintained</h5>
-                        <h1 class="display-5 text-white mb-0" data-toggle="counter-up">99</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="d-flex">
-                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                        <i class="fa fa-route fs-4 text-white"></i>
-                    </div>
-                    <div class="ps-4">
-                        <h5 class="text-white">Routes Optimized</h5>
-                        <h1 class="display-5 text-white mb-0" data-toggle="counter-up">1250</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Stats End -->
-
-    <!-- Map Section Start -->
-    
-    <!-- Map Section End -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row g-5">
-                <!-- Grading Criteria Section -->
-                <div class="col-lg-6">
-                    <div class="bg-white p-4 rounded shadow">
-                        <h4 class="text-primary mb-4">Produce Grading Standards</h4>
-                        <div class="mb-4">
-                            <select class="form-select mb-3" id="cropSelect">
-                                <option selected disabled>Select Crop Type</option>
-                                <option value="rice">Rice</option>
-                                <option value="wheat">Wheat</option>
-                                <option value="vegetables">Vegetables</option>
-                                <option value="fruits">Fruits</option>
-                            </select>
-                            <div id="gradingCriteria" class="mt-3">
-                                <!-- Grading criteria will be loaded here -->
-                            </div>
-                        </div>
-                        <div class="border-top pt-3">
-                            <h5 class="mb-3">Quality Parameters</h5>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group mb-3">
-                                        <label>Moisture Content (%)</label>
-                                        <input type="number" class="form-control" id="moistureContent">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group mb-3">
-                                        <label>Size Uniformity</label>
-                                        <select class="form-select" id="sizeUniformity">
-                                            <option value="high">High</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="low">Low</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Quality Reports Section -->
-                <div class="col-lg-6">
-                    <div class="bg-white p-4 rounded shadow">
-                        <h4 class="text-primary mb-4">Inspector Reports</h4>
-                        <div class="mb-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <h5 class="mb-0">Recent Inspections</h5>
-                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#newInspectionModal">
-                                    New Inspection
-                                </button>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Batch ID</th>
-                                            <th>Grade</th>
-                                            <th>Inspector</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="inspectionTableBody">
-                                        <!-- Sample data -->
-                                        <tr>
-                                            <td>2024-03-15</td>
-                                            <td>BATCH001</td>
-                                            <td>A</td>
-                                            <td>John Doe</td>
-                                            <td><span class="badge bg-success">Approved</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Quality Trends Section -->
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="bg-light p-4 rounded-3 shadow-lg">
-                        <h4 class="text-primary mb-4 text-center">Quality Analysis & Trends</h4>
-                        <div class="row">
-                            <!-- Left Section (Interactive Placeholder for Content or Chart) -->
-                            <div class="col-md-8">
-                                <div class="bg-secondary p-4 rounded-3" style="min-height: 300px;">
-                                    <p class="text-white text-center">Chart or Data Visualization will be here.</p>
-                                    <!-- Button to Toggle Visibility of Chart -->
-                                    <button class="btn btn-light btn-sm w-100 mt-3" id="toggleChart" onclick="toggleChartVisibility()">Toggle Chart Visibility</button>
-                                </div>
-                            </div>
-            
-                            <!-- Problem Areas Section (Right Column with Interactive Alerts) -->
-                            <div class="col-md-4">
-                                <h5 class="mb-4 text-muted">Key Insights</h5>
-            
-                                <!-- Collapsible Alerts Section -->
-                                <div class="alert alert-warning d-flex align-items-center mb-3 p-3 rounded-3 shadow-sm" id="alert1">
-                                    <i class="fas fa-exclamation-triangle me-3 fs-4"></i>
-                                    <span>High moisture content in recent rice batches</span>
-                                    <button class="btn btn-sm btn-outline-secondary ms-auto" onclick="toggleAlert('alert1')">Toggle Alert</button>
-                                </div>
-                                <div class="alert alert-info d-flex align-items-center mb-3 p-3 rounded-3 shadow-sm" id="alert2">
-                                    <i class="fas fa-info-circle me-3 fs-4"></i>
-                                    <span>Size uniformity improving in wheat shipments</span>
-                                    <button class="btn btn-sm btn-outline-secondary ms-auto" onclick="toggleAlert('alert2')">Toggle Alert</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Grading System End -->
-    
-    <!-- Packaging Management Start -->
-    <div class="container-fluid py-5 bg-light">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <div class="bg-white p-4 rounded shadow">
-                        <h4 class="text-primary mb-4">Packaging Management</h4>
-                        <div class="mb-4">
-                            <div class="form-group mb-3">
-                                <label>Package Type</label>
-                                <select class="form-select" id="packageType">
-                                    <option value="carton">Carton Box</option>
-                                    <option value="crate">Plastic Crate</option>
-                                    <option value="bag">Jute Bag</option>
-                                    <option value="container">Container</option>
-                                </select>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label>Batch Number</label>
-                                        <input type="text" class="form-control" id="batchNumber">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <label>Quantity</label>
-                                        <input type="number" class="form-control" id="quantity">
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary w-100">Generate Package Labels</button>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-lg-6">
-                    <div class="bg-white p-4 rounded shadow">
-                        <h4 class="text-primary mb-4">Packaging Reports</h4>
-                        <div class="mb-3">
-                            <canvas id="packagingStatsChart"></canvas>
-                        </div>
-                        <div class="table-responsive mt-4">
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr>
-                                        <th>Package Type</th>
-                                        <th>In Stock</th>
-                                        <th>Used Today</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Carton Box</td>
-                                        <td>1,200</td>
-                                        <td>150</td>
-                                        <td><span class="badge bg-success">Adequate</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Plastic Crate</td>
-                                        <td>800</td>
-                                        <td>200</td>
-                                        <td><span class="badge bg-warning">Low Stock</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Packaging Management End -->
-    
-    <!-- Transport Tracking Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-8">
-                    <div class="bg-white p-4 rounded shadow">
-                        <h4 class="text-primary mb-4">Transportation Tracking</h4>
-                        <div id="transportMap" style="height: 400px;" class="mb-4"></div>
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label>Vehicle ID</label>
-                                    <input type="text" class="form-control" id="vehicleId" placeholder="Enter vehicle ID">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label>Time Period</label>
-                                    <select class="form-select" id="timePeriod">
-                                        <option value="today">Today</option>
-                                        <option value="week">This Week</option>
-                                        <option value="month">This Month</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-lg-4">
-                    <div class="bg-white p-4 rounded shadow">
-                        <h4 class="text-primary mb-4">Active Shipments</h4>
-                        <div class="vehicle-list" style="max-height: 400px; overflow-y: auto;">
-                            <!-- Sample vehicle entries -->
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h6 class="card-title">Vehicle: TRK-001</h6>
-                                    <p class="card-text mb-1">
-                                        <small>Current Location: Dhaka Central</small>
-                                    </p>
-                                    <p class="card-text mb-1">
-                                        <small>Status: In Transit</small>
-                                    </p>
-                                    <div class="progress" style="height: 5px;">
-                                        <div class="progress-bar bg-success" style="width: 70%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h6 class="card-title">Vehicle: TRK-002</h6>
-                                    <p class="card-text mb-1">
-                                        <small>Current Location: Chittagong Port</small>
-                                    </p>
-                                    <p class="card-text mb-1">
-                                        <small>Status: Loading</small>
-                                    </p>
-                                    <div class="progress" style="height: 5px;">
-                                        <div class="progress-bar bg-warning" style="width: 30%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="bg-white p-4 rounded shadow mt-4">
-                        <h4 class="text-primary mb-4">Delivery Statistics</h4>
-                        <div class="mb-3">
-                            <h6 class="mb-2">On-Time Delivery Rate</h6>
-                            <div class="progress mb-3" style="height: 20px;">
-                                <div class="progress-bar bg-success" style="width: 92%">92%</div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <h6 class="mb-2">Average Transit Time</h6>
-                            <p class="h3 text-primary mb-0">18.5 hrs</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="bg-white p-5 rounded shadow">
-                        <h5 class="text-primary mb-3">Track Your Produce</h5>
-                        <p class="text-dark mb-4">Monitor the journey of your produce in real-time with our advanced tracking system.</p>
-                        <div id="map"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-      <!-- Footer Start -->
-      <div class="container-fluid bg-footer bg-primary text-white mt-5">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                            <h4 class="text-white mb-4">Made by</h4>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-people text-white me-2"></i>
-                                <p class="text-white mb-0">Group11</p>
-                            </div>
-                            
-
-                            <div class="d-flex mb-2"> 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database" viewBox="0 0 16 16">
-                                    <path d="M4.318 2.687C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4c0-.374.356-.875 1.318-1.313M13 5.698V7c0 .374-.356.875-1.318 1.313C10.766 8.729 9.464 9 8 9s-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777A5 5 0 0 0 13 5.698M14 4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13zm-1 4.698V10c0 .374-.356.875-1.318 1.313C10.766 11.729 9.464 12 8 12s-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777A5 5 0 0 0 13 8.698m0 3V13c0 .374-.356.875-1.318 1.313C10.766 14.729 9.464 15 8 15s-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13s3.022-.289 4.096-.777c.324-.147.633-.323.904-.525"/>
-                                </svg>
-                                <i class="bi bi-database text-white me-2"></i> 
-                                
-                                <p class="text-white mb-0">Lab section: 6</p>
-                            </div>
-
-                            <div class="d-flex mb-2">
-    <i class="bi bi-geo-alt text-white me-2"></i>
-    <a href="https://iub.ac.bd/" class="text-white mb-0" target="_blank" style="text-decoration: none;">Independent University, Bangladesh</a>
-</div>
-
-                            
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-secondary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script>
-        // Initialize map
-        let map = L.map('map').setView([23.8103, 90.4125], 7);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: ''
-        }).addTo(map);
-
-        let marker;
-        let polyline;
-
-        // API endpoints
-        const API_BASE_URL = 'https://api.greenroots.com/v1';
-        
-        // Track produce function
-        async function trackProduce() {
-            const trackingId = document.getElementById('trackingId').value;
-            if (!trackingId) {
-                alert('Please enter a tracking ID');
-                return;
-            }
-
-            try {
-                const response = await fetch(`${API_BASE_URL}/track/${trackingId}`);
-                const data = await response.json();
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_1"
+              aria-controls="ddmenu_1"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12h16M4 18h16M4 6h16" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  
+              </span>
+              <span class="text">Dashboard</span>
+            </a>
+            <ul id="ddmenu_1" class="collapse show dropdown-nav">
+              <li>
+                <a href="index.html" class="active"> Products </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_2"
+              aria-controls="ddmenu_2"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="4" fill="#795548"/>
+                  <path d="M16 20v-2c0-2.21-1.79-4-4-4s-4 1.79-4 4v2h8z" fill="#4CAF50"/>
+                </svg>
                 
-                if (!response.ok) {
-                    throw new Error(data.message || 'Failed to track produce');
-                }
+              </span>
+              <span class="text"> Farmers</span>
+            </a>
+            <ul id="ddmenu_2" class="collapse dropdown-nav">
+              <li>
+                <a href="settings.html"> Settings </a>
+              </li>
+              <li>
+                <a href="blank-page.html"> Blank Page </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="invoice.html">
+              <span class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 3h18v18H3V3z" stroke="#3F51B5" stroke-width="2"/>
+                  <path d="M7 14h2v4H7v-4zm4-4h2v8h-2v-8zm4 2h2v6h-2v-6z" fill="#3F51B5"/>
+                </svg>
+                
+              </span>
+              <span class="text">Reports
+              </span>
+            </a>
+          </li>
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_3"
+              aria-controls="ddmenu_3"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="7" width="15" height="10" fill="#FF9800"/>
+                  <rect x="18" y="10" width="4" height="7" fill="#FF9800"/>
+                  <circle cx="7" cy="19" r="2" fill="#37474F"/>
+                  <circle cx="18" cy="19" r="2" fill="#37474F"/>
+                </svg>
+                
+              </span>
+              <span class="text">Logistics</span>
+            </a>
+            <ul id="ddmenu_3" class="collapse dropdown-nav">
+              <li>
+                <a href="signin.html"> Sign In </a>
+              </li>
+              <li>
+                <a href="signup.html"> Sign Up </a>
+              </li>
+            </ul>
+          </li>
+          <span class="divider"><hr /></span>
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_4"
+              aria-controls="ddmenu_4"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 8l8-4 8 4v8l-8 4-8-4V8z" stroke="#795548" stroke-width="2"/>
+                  <path d="M4 8l8 4 8-4" stroke="#795548" stroke-width="2"/>
+                </svg>
+                
+              </span>
+              <span class="text">Packaging</span>
+            </a>
+            <ul id="ddmenu_4" class="collapse dropdown-nav">
+              <li>
+                <a href="alerts.html"> Alerts </a>
+              </li>
+              <li>
+                <a href="buttons.html"> Buttons </a>
+              </li>
+              <li>
+                <a href="cards.html"> Cards </a>
+              </li>
+              <li>
+                <a href="typography.html"> Typography </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_55"
+              aria-controls="ddmenu_55"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 11l3 3 6-6" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12" r="10" stroke="#4CAF50" stroke-width="2"/>
+                </svg>
+                
+              </span>
+              <span class="text">Grading</span>
+            </a>
+            <ul id="ddmenu_55" class="collapse dropdown-nav">
+              <li>
+                <a href="icons.html"> LineIcons </a>
+              </li>
+              <li>
+                <a href="mdi-icons.html"> MDI Icons </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_5"
+              aria-controls="ddmenu_5"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="3" width="14" height="18" rx="2" ry="2" stroke="#607D8B" stroke-width="2"/>
+                  <path d="M9 7h6M9 11h6M9 15h4" stroke="#607D8B" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                
+              </span>
+              <span class="text">  BFSA</span>
+            </a>
+            <ul id="ddmenu_5" class="collapse dropdown-nav">
+              <li>
+                <a href="form-elements.html"> From Elements </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="tables.html">
+              <span class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="4" fill="#607D8B"/>
+                  <path d="M6 20v-2c0-2.21 1.79-4 4-4h4c2.21 0 4 1.79 4 4v2H6z" fill="#4CAF50"/>
+                </svg>
+                
+              </span>
+              <span class="text">Inspectors</span>
+            </a>
+          </li>
+          <span class="divider"><hr /></span>
 
-                updateMap(data);
-                updateTrackingInfo(data);
-            } catch (error) {
-                console.error('Tracking error:', error);
-                document.getElementById('trackingInfo').innerHTML = `
-                    <div class="alert alert-danger">
-                        ${error.message || 'Failed to track produce. Please try again.'}
-                    </div>
-                `;
-            }
-        }
+          <li class="nav-item">
+            <a href="notification.html">
+              <span class="icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2a7 7 0 00-7 7v5l-2 2v1h18v-1l-2-2V9a7 7 0 00-7-7z" stroke="#FF5722" stroke-width="2" fill="none"/>
+                  <circle cx="12" cy="19" r="2" fill="#FF5722"/>
+                </svg>
+                
+              </span>
+              <span class="text">Notifications</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
+    </aside>
+    <div class="overlay"></div>
+    <!-- ======== sidebar-nav end =========== -->
 
-        // Update map with tracking data
-        function updateMap(data) {
-            // Clear existing markers and paths
-            if (marker) map.removeLayer(marker);
-            if (polyline) map.removeLayer(polyline);
-
-            // Add marker for current location
-            marker = L.marker([data.currentLocation.lat, data.currentLocation.lng])
-                .bindPopup(`Current Location: ${data.currentLocation.name}`)
-                .addTo(map);
-
-            // Draw path of journey
-            const pathCoordinates = data.journey.map(point => [point.lat, point.lng]);
-            polyline = L.polyline(pathCoordinates, {color: 'red'}).addTo(map);
-
-            // Fit map to show entire journey
-            map.fitBounds(polyline.getBounds());
-        }
-
-        // Update tracking information
-        function updateTrackingInfo(data) {
-            const statusColors = {
-                'in_transit': 'text-primary',
-                'delivered': 'text-success',
-                'delayed': 'text-warning',
-                'issue': 'text-danger'
-            };
-
-            const html = `
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Tracking Details</h5>
-                        <div class="mb-3">
-                            <strong>Status:</strong> 
-                            <span class="${statusColors[data.status] || 'text-dark'}">
-                                ${data.status.replace('_', ' ').toUpperCase()}
-                            </span>
-                        </div>
-                        <div class="mb-3">
-                            <strong>Product:</strong> ${data.productName}
-                        </div>
-                        <div class="mb-3">
-                            <strong>Origin:</strong> ${data.origin}
-                        </div>
-                        <div class="mb-3">
-                            <strong>Destination:</strong> ${data.destination}
-                        </div>
-                        <div class="mb-3">
-                            <strong>Expected Delivery:</strong> ${new Date(data.expectedDelivery).toLocaleDateString()}
-                        </div>
-                        <div class="mb-3">
-                            <strong>Current Temperature:</strong> ${data.temperature}°C
-                        </div>
-                    </div>
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <!-- ========== header start ========== -->
+      <header class="header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5 col-md-5 col-6">
+              <div class="header-left d-flex align-items-center">
+                <div class="menu-toggle-btn mr-15">
+                  <button id="menu-toggle" class="main-btn primary-btn btn-hover">
+                    <i class="lni lni-chevron-left me-2"></i> Menu
+                  </button>
                 </div>
-                <div class="card mt-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Journey Timeline</h5>
-                        <div class="timeline">
-                            ${data.journey.map(point => `
-                                <div class="timeline-item mb-2">
-                                    <small class="text-muted">${new Date(point.timestamp).toLocaleString()}</small>
-                                    <div>${point.name}</div>
-                                    <div class="text-muted">${point.status}</div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
+                <div class="header-search d-none d-md-flex">
+                  <form action="#">
+                    <input type="text" placeholder="Search..." />
+                    <button><i class="lni lni-search-alt"></i></button>
+                  </form>
                 </div>
-            `;
-
-            document.getElementById('trackingInfo').innerHTML = html;
-        }
-
-        // Initialize counter-up
-        $(document).ready(function() {
-            $('.counter-up').counterUp({
-                delay: 10,
-                time: 1000
-            });
-        });
-
-        // Back to top button
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 100) {
-                $('.back-to-top').fadeIn('slow');
-            } else {
-                $('.back-to-top').fadeOut('slow');
-            }
-        });
-        $('.back-to-top').click(function() {
-            $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-            return false;
-        });
-        // ... (your existing JavaScript code) ...
-
-// Dynamic Grading Criteria
-document.getElementById('cropSelect').addEventListener('change', async function() {
-    const cropType = this.value;
-    try {
-        const response = await fetch(`${API_BASE_URL}/grading-criteria/${cropType}`);
-        const criteria = await response.json();
-
-        const criteriaHTML = criteria.map(criterion => `
-            <div class="card mb-2">
-                <div class="card-body">
-                    <h6 class="card-title">${criterion.name}</h6>
-                    <p class="card-text">${criterion.description}</p>
-                </div>
+              </div>
             </div>
-        `).join('');
+            <div class="col-lg-7 col-md-7 col-6">
+              <div class="header-right">
+                <!-- notification start -->
+                <div class="notification-box ml-15 d-none d-md-flex">
+                  <button class="dropdown-toggle" type="button" id="notification" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M11 20.1667C9.88317 20.1667 8.88718 19.63 8.23901 18.7917H13.761C13.113 19.63 12.1169 20.1667 11 20.1667Z"
+                        fill="" />
+                      <path
+                        d="M10.1157 2.74999C10.1157 2.24374 10.5117 1.83333 11 1.83333C11.4883 1.83333 11.8842 2.24374 11.8842 2.74999V2.82604C14.3932 3.26245 16.3051 5.52474 16.3051 8.24999V14.287C16.3051 14.5301 16.3982 14.7633 16.564 14.9352L18.2029 16.6342C18.4814 16.9229 18.2842 17.4167 17.8903 17.4167H4.10961C3.71574 17.4167 3.5185 16.9229 3.797 16.6342L5.43589 14.9352C5.6017 14.7633 5.69485 14.5301 5.69485 14.287V8.24999C5.69485 5.52474 7.60672 3.26245 10.1157 2.82604V2.74999Z"
+                        fill="" />
+                    </svg>
+                    <span></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notification">
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-6.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>
+                            Tanvir Mahmud
+                            <span class="text-regular">
+                              comment on a product.
+                            </span>
+                          </h6>
+                          <p>
+                            Lorem ipsum dolor sit amet, consect etur adipiscing
+                            elit Vivamus tortor.
+                          </p>
+                          <span>10 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-1.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>
+                            Jonathon
+                            <span class="text-regular">
+                              like on a product.
+                            </span>
+                          </h6>
+                          <p>
+                            Lorem ipsum dolor sit amet, consect etur adipiscing
+                            elit Vivamus tortor.
+                          </p>
+                          <span>10 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- notification end -->
+                <!-- message start -->
+                <div class="header-message-box ml-15 d-none d-md-flex">
+                  <button class="dropdown-toggle" type="button" id="message" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M7.74866 5.97421C7.91444 5.96367 8.08162 5.95833 8.25005 5.95833C12.5532 5.95833 16.0417 9.4468 16.0417 13.75C16.0417 13.9184 16.0364 14.0856 16.0259 14.2514C16.3246 14.138 16.6127 14.003 16.8883 13.8482L19.2306 14.629C19.7858 14.8141 20.3141 14.2858 20.129 13.7306L19.3482 11.3882C19.8694 10.4604 20.1667 9.38996 20.1667 8.25C20.1667 4.70617 17.2939 1.83333 13.75 1.83333C11.0077 1.83333 8.66702 3.55376 7.74866 5.97421Z"
+                        fill="" />
+                      <path
+                        d="M14.6667 13.75C14.6667 17.2938 11.7939 20.1667 8.25004 20.1667C7.11011 20.1667 6.03962 19.8694 5.11182 19.3482L2.76946 20.129C2.21421 20.3141 1.68597 19.7858 1.87105 19.2306L2.65184 16.8882C2.13062 15.9604 1.83338 14.89 1.83338 13.75C1.83338 10.2062 4.70622 7.33333 8.25004 7.33333C11.7939 7.33333 14.6667 10.2062 14.6667 13.75ZM5.95838 13.75C5.95838 13.2437 5.54797 12.8333 5.04171 12.8333C4.53545 12.8333 4.12504 13.2437 4.12504 13.75C4.12504 14.2563 4.53545 14.6667 5.04171 14.6667C5.54797 14.6667 5.95838 14.2563 5.95838 13.75ZM9.16671 13.75C9.16671 13.2437 8.7563 12.8333 8.25004 12.8333C7.74379 12.8333 7.33338 13.2437 7.33338 13.75C7.33338 14.2563 7.74379 14.6667 8.25004 14.6667C8.7563 14.6667 9.16671 14.2563 9.16671 13.75ZM11.4584 14.6667C11.9647 14.6667 12.375 14.2563 12.375 13.75C12.375 13.2437 11.9647 12.8333 11.4584 12.8333C10.9521 12.8333 10.5417 13.2437 10.5417 13.75C10.5417 14.2563 10.9521 14.6667 11.4584 14.6667Z"
+                        fill="" />
+                    </svg>
+                    <span></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="message">
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-5.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>Jacob Jones</h6>
+                          <p>Hey!I can across your profile and ...</p>
+                          <span>10 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-3.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>Tanvir Mahmud</h6>
+                          <p>Would you mind please checking out</p>
+                          <span>12 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="assets/images/lead/lead-2.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>Anee Lee</h6>
+                          <p>Hey! are you available for freelance?</p>
+                          <span>1h ago</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- message end -->
+                <!-- profile start -->
+                <div class="profile-box ml-15">
+                  <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="profile-info">
+                      <div class="info">
+                        <div class="image">
+                          <img src="assets/images/profile/profile-image.png" alt="" />
+                        </div>
+                        <div>
+                          <h6 class="fw-500">Tanvir Mahmud</h6>
+                          <p>Admin</p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+                    <li>
+                      <div class="author-info flex items-center !p-1">
+                        <div class="image">
+                          <img src="assets/images/profile/profile-image.png" alt="image">
+                        </div>
+                        <div class="content">
+                          <h4 class="text-sm">Tanvir Mahmud</h4>
+                          <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs" href="#">Email@gmail.com</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#0">
+                        <i class="lni lni-user"></i> View Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <i class="lni lni-alarm"></i> Notifications
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-inbox"></i> Messages </a>
+                    </li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- profile end -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- ========== header end ========== -->
 
-        document.getElementById('gradingCriteria').innerHTML = criteriaHTML;
-    } catch (error) {
-        console.error('Error fetching criteria:', error);
-        document.getElementById('gradingCriteria').innerHTML = '<div class="alert alert-danger">Failed to load grading criteria.</div>';
-    }
-});
+      <!-- ========== section start ========== -->
+      <section class="section">
+        <div class="container-fluid">
+          <!-- ========== title-wrapper start ========== -->
+          <div class="title-wrapper pt-30">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="title">
+                  <h2>GrrenRoots Dashboard</h2>
+                </div>
+              </div>
+              <!-- end col -->
+              <div class="col-md-6">
+                <div class="breadcrumb-wrapper">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="#0">Dashboard</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        Product 
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+              <!-- end col -->
+            </div>
+            <!-- end row -->
+          </div>
+          <!-- ========== title-wrapper end ========== -->
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="icon-card mb-30">
+                <div class="icon purple">
+                  <i class="lni lni-cart-full"></i>
+                </div>
+                <div class="content">
+                  <h6 class="mb-10">New Orders</h6>
+                  <h3 class="text-bold mb-10">34567</h3>
+                  <p class="text-sm text-success">
+                    <i class="lni lni-arrow-up"></i> +2.00%
+                    <span class="text-gray">(30 days)</span>
+                  </p>
+                </div>
+              </div>
+              <!-- End Icon Cart -->
+            </div>
+            <!-- End Col -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="icon-card mb-30">
+                <div class="icon success">
+                  <i class="lni lni-dollar"></i>
+                </div>
+                <div class="content">
+                  <h6 class="mb-10">Total Income</h6>
+                  <h3 class="text-bold mb-10">$74,567</h3>
+                  <p class="text-sm text-success">
+                    <i class="lni lni-arrow-up"></i> +5.45%
+                    <span class="text-gray">Increased</span>
+                  </p>
+                </div>
+              </div>
+              <!-- End Icon Cart -->
+            </div>
+            <!-- End Col -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="icon-card mb-30">
+                <div class="icon primary">
+                  <i class="lni lni-credit-cards"></i>
+                </div>
+                <div class="content">
+                  <h6 class="mb-10">Total Expense</h6>
+                  <h3 class="text-bold mb-10">$24,567</h3>
+                  <p class="text-sm text-danger">
+                    <i class="lni lni-arrow-down"></i> -2.00%
+                    <span class="text-gray">Expense</span>
+                  </p>
+                </div>
+              </div>
+              <!-- End Icon Cart -->
+            </div>
+            <!-- End Col -->
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="icon-card mb-30">
+                <div class="icon orange">
+                  <i class="lni lni-user"></i>
+                </div>
+                <div class="content">
+                  <h6 class="mb-10">New User</h6>
+                  <h3 class="text-bold mb-10">34567</h3>
+                  <p class="text-sm text-danger">
+                    <i class="lni lni-arrow-down"></i> -25.00%
+                    <span class="text-gray"> Earning</span>
+                  </p>
+                </div>
+              </div>
+              <!-- End Icon Cart -->
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card-style mb-30">
+                <div class="title d-flex flex-wrap justify-content-between">
+                  <div class="left">
+                    <h6 class="text-medium mb-10">Yearly Produced Crops</h6>
+                    <h3 class="text-bold">245,479</h3>
+                  </div>
+                  <div class="right">
+                    <div class="select-style-1">
+                      <div class="select-position select-sm">
+                        <select class="light-bg">
+                          <option value="">Yearly</option>
+                          <option value="">Monthly</option>
+                          <option value="">Weekly</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- end select -->
+                  </div>
+                </div>
+                <!-- End Title -->
+                <div class="chart">
+                  <canvas id="Chart1" style="width: 100%; height: 400px; margin-left: -35px;"></canvas>
+                </div>
+                <!-- End Chart -->
+              </div>
+            </div>
+            <!-- End Col -->
+            <div class="col-lg-5">
+              <div class="card-style mb-30">
+                <div class="title d-flex flex-wrap align-items-center justify-content-between">
+                  <div class="left">
+                    <h6 class="text-medium mb-30">Production</h6>
+                  </div>
+                  <div class="right">
+                    <div class="select-style-1">
+                      <div class="select-position select-sm">
+                        <select class="light-bg">
+                          <option value="">Yearly</option>
+                          <option value="">Monthly</option>
+                          <option value="">Weekly</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- end select -->
+                  </div>
+                </div>
+                <!-- End Title -->
+                <div class="chart">
+                  <canvas id="Chart2" style="width: 100%; height: 400px; margin-left: -45px;"></canvas>
+                </div>
+                <!-- End Chart -->
+              </div>
+            </div>
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+          
 
-// Real-time Inspection Updates
-const socket = new WebSocket('wss://api.greenroots.com/ws/inspections'); // Replace with your actual WebSocket endpoint
+      <!-- ========== footer start =========== -->
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 order-last order-md-first">
+              <div class="copyright text-center text-md-start">
+                <p class="text-sm">
+                  Designed and Developed by
+                  <a href="https://plainadmin.com" rel="nofollow" target="_blank">
+                    Group: 11, Section: 6
+                  </a>
+                </p>
+              </div>
+            </div>
+            <!-- end col-->
+            <div class="col-md-6">
+              <div class="terms d-flex justify-content-center justify-content-md-end">
+                <a href="#0" class="text-sm"></a>
+                <a href="#0" class="text-sm ml-15"></a>
+              </div>
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end container -->
+      </footer>
+      <!-- ========== footer end =========== -->
+    </main>
+    <!-- ======== main-wrapper end =========== -->
 
-socket.addEventListener('message', function(event) {
-    const inspection = JSON.parse(event.data);
-    const row = document.createElement('tr');
-    row.innerHTML = `
-        <td>${inspection.date}</td>
-        <td>${inspection.batchId}</td>
-        <td>${inspection.grade}</td>
-        <td>${inspection.inspector}</td>
-        <td><span class="badge bg-${inspection.status === 'Approved' ? 'success' : 'danger'}">${inspection.status}</span></td>
-    `;
-    document.getElementById('inspectionTableBody').appendChild(row);
-});
+    <!-- ========= All Javascript files linkup ======== -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/Chart.min.js"></script>
+    <script src="assets/js/dynamic-pie-chart.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/fullcalendar.js"></script>
+    <script src="assets/js/jvectormap.min.js"></script>
+    <script src="assets/js/world-merc.js"></script>
+    <script src="assets/js/polyfill.js"></script>
+    <script src="assets/js/main.js"></script>
 
-// Live Shipment Tracking
-// Initialize the map
-let transportMap = L.map('transportMap').setView([23.8103, 90.4125], 7);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: ''
-}).addTo(transportMap);
+    <script>
+      // ======== jvectormap activation
+      var markers = [
+        { name: "Egypt", coords: [26.8206, 30.8025] },
+        { name: "Russia", coords: [61.524, 105.3188] },
+        { name: "Canada", coords: [56.1304, -106.3468] },
+        { name: "Greenland", coords: [71.7069, -42.6043] },
+        { name: "Brazil", coords: [-14.235, -51.9253] },
+      ];
 
-// Function to update vehicle location on the map
-function updateVehicleLocation(vehicleId, location) {
-    if (markers[vehicleId]) {
-        markers[vehicleId].setLatLng([location.lat, location.lng]);
-    } else {
-        markers[vehicleId] = L.marker([location.lat, location.lng]).addTo(transportMap);
-    }
-}
+      var jvm = new jsVectorMap({
+        map: "world_merc",
+        selector: "#map",
+        zoomButtons: true,
 
-// Example using WebSockets to receive location updates
-const locationSocket = new WebSocket('wss://api.greenroots.com/ws/vehicle-locations'); // Replace with your actual WebSocket endpoint
+        regionStyle: {
+          initial: {
+            fill: "#d1d5db",
+          },
+        },
 
-locationSocket.addEventListener('message', function(event) {
-    const data = JSON.parse(event.data);
-    updateVehicleLocation(data.vehicleId, data.location);
-});
+        labels: {
+          markers: {
+            render: (marker) => marker.name,
+          },
+        },
 
-    // Function to toggle visibility of the chart section
-    function toggleChartVisibility() {
-        const chartSection = document.querySelector('.bg-secondary');
-        chartSection.style.display = chartSection.style.display === 'none' ? 'block' : 'none';
-    }
+        markersSelectable: true,
+        selectedMarkers: markers.map((marker, index) => {
+          var name = marker.name;
 
-    // Function to toggle visibility of alerts (collapse/expand)
-    function toggleAlert(alertId) {
-        const alertElement = document.getElementById(alertId);
-        alertElement.style.display = alertElement.style.display === 'none' ? 'block' : 'none';
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-    // Initialize smooth scroll
-    var scroll = new SmoothScroll('a[href*="#"]', {
-        speed: 800,
-        speedAsDuration: true
-    });
-
-    // Back to top button visibility
-    var backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
-
-    // Animate counters in facts section
-    const counters = document.querySelectorAll('[toggle="counter-up"]');
-    const options = {
-        threshold: 1,
-        rootMargin: "0px",
-    };
-
-    const observer = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const countTo = parseInt(target.innerText);
-                let count = 0;
-                const timer = setInterval(() => {
-                    count++;
-                    target.innerText = count;
-                    if (count >= countTo) clearInterval(timer);
-                }, 15);
-                observer.unobserve(target);
-            }
+          if (name === "Russia" || name === "Brazil") {
+            return index;
+          }
+        }),
+        markers: markers,
+        markerStyle: {
+          initial: { fill: "#4A6CF7" },
+          selected: { fill: "#ff5050" },
+        },
+        markerLabelStyle: {
+          initial: {
+            fontWeight: 400,
+            fontSize: 14,
+          },
+        },
+      });
+      // ====== calendar activation
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarMiniEl = document.getElementById("calendar-mini");
+        var calendarMini = new FullCalendar.Calendar(calendarMiniEl, {
+          initialView: "dayGridMonth",
+          headerToolbar: {
+            end: "today prev,next",
+          },
         });
-    }, options);
+        calendarMini.render();
+      });
 
-    counters.forEach(counter => observer.observe(counter));
-});
+      // =========== chart one start
+      const ctx1 = document.getElementById("Chart1").getContext("2d");
+      const chart1 = new Chart(ctx1, {
+        type: "line",
+        data: {
+          labels: [
+            "Jan",
+            "Fab",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          datasets: [
+            {
+              label: "",
+              backgroundColor: "transparent",
+              borderColor: "#365CF5",
+              data: [
+                600, 800, 750, 880, 940, 880, 900, 770, 920, 890, 976, 1100,
+              ],
+              pointBackgroundColor: "transparent",
+              pointHoverBackgroundColor: "#365CF5",
+              pointBorderColor: "transparent",
+              pointHoverBorderColor: "#fff",
+              pointHoverBorderWidth: 5,
+              borderWidth: 5,
+              pointRadius: 8,
+              pointHoverRadius: 8,
+              cubicInterpolationMode: "monotone", // Add this line for curved line
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            tooltip: {
+              callbacks: {
+                labelColor: function (context) {
+                  return {
+                    backgroundColor: "#ffffff",
+                    color: "#171717"
+                  };
+                },
+              },
+              intersect: false,
+              backgroundColor: "#f9f9f9",
+              title: {
+                fontFamily: "Plus Jakarta Sans",
+                color: "#8F92A1",
+                fontSize: 12,
+              },
+              body: {
+                fontFamily: "Plus Jakarta Sans",
+                color: "#171717",
+                fontStyle: "bold",
+                fontSize: 16,
+              },
+              multiKeyBackground: "transparent",
+              displayColors: false,
+              padding: {
+                x: 30,
+                y: 10,
+              },
+              bodyAlign: "center",
+              titleAlign: "center",
+              titleColor: "#8F92A1",
+              bodyColor: "#171717",
+              bodyFont: {
+                family: "Plus Jakarta Sans",
+                size: "16",
+                weight: "bold",
+              },
+            },
+            legend: {
+              display: false,
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          title: {
+            display: false,
+          },
+          scales: {
+            y: {
+              grid: {
+                display: false,
+                drawTicks: false,
+                drawBorder: false,
+              },
+              ticks: {
+                padding: 35,
+                max: 1200,
+                min: 500,
+              },
+            },
+            x: {
+              grid: {
+                drawBorder: false,
+                color: "rgba(143, 146, 161, .1)",
+                zeroLineColor: "rgba(143, 146, 161, .1)",
+              },
+              ticks: {
+                padding: 20,
+              },
+            },
+          },
+        },
+      });
+      // =========== chart one end
 
+      // =========== chart two start
+      const ctx2 = document.getElementById("Chart2").getContext("2d");
+      const chart2 = new Chart(ctx2, {
+        type: "bar",
+        data: {
+          labels: [
+            "Jan",
+            "Fab",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          datasets: [
+            {
+              label: "",
+              backgroundColor: "#365CF5",
+              borderRadius: 30,
+              barThickness: 6,
+              maxBarThickness: 8,
+              data: [
+                600, 700, 1000, 700, 650, 800, 690, 740, 720, 1120, 876, 900,
+              ],
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            tooltip: {
+              callbacks: {
+                titleColor: function (context) {
+                  return "#8F92A1";
+                },
+                label: function (context) {
+                  let label = context.dataset.label || "";
 
-// ... (rest of your existing JavaScript code) ...
+                  if (label) {
+                    label += ": ";
+                  }
+                  label += context.parsed.y;
+                  return label;
+                },
+              },
+              backgroundColor: "#F3F6F8",
+              titleAlign: "center",
+              bodyAlign: "center",
+              titleFont: {
+                size: 12,
+                weight: "bold",
+                color: "#8F92A1",
+              },
+              bodyFont: {
+                size: 16,
+                weight: "bold",
+                color: "#171717",
+              },
+              displayColors: false,
+              padding: {
+                x: 30,
+                y: 10,
+              },
+          },
+          },
+          legend: {
+            display: false,
+            },
+          legend: {
+            display: false,
+          },
+          layout: {
+            padding: {
+              top: 15,
+              right: 15,
+              bottom: 15,
+              left: 15,
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              grid: {
+                display: false,
+                drawTicks: false,
+                drawBorder: false,
+              },
+              ticks: {
+                padding: 35,
+                max: 1200,
+                min: 0,
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+                drawBorder: false,
+                color: "rgba(143, 146, 161, .1)",
+                drawTicks: false,
+                zeroLineColor: "rgba(143, 146, 161, .1)",
+              },
+              ticks: {
+                padding: 20,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+            title: {
+              display: false,
+            },
+          },
+        },
+      });
+      // =========== chart two end
+
+      // =========== chart three start
+      const ctx3 = document.getElementById("Chart3").getContext("2d");
+      const chart3 = new Chart(ctx3, {
+        type: "line",
+        data: {
+          labels: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          datasets: [
+            {
+              label: "Revenue",
+              backgroundColor: "transparent",
+              borderColor: "#365CF5",
+              data: [80, 120, 110, 100, 130, 150, 115, 145, 140, 130, 160, 210],
+              pointBackgroundColor: "transparent",
+              pointHoverBackgroundColor: "#365CF5",
+              pointBorderColor: "transparent",
+              pointHoverBorderColor: "#365CF5",
+              pointHoverBorderWidth: 3,
+              pointBorderWidth: 5,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              fill: false,
+              tension: 0.4,
+            },
+            {
+              label: "Profit",
+              backgroundColor: "transparent",
+              borderColor: "#9b51e0",
+              data: [
+                120, 160, 150, 140, 165, 210, 135, 155, 170, 140, 130, 200,
+              ],
+              pointBackgroundColor: "transparent",
+              pointHoverBackgroundColor: "#9b51e0",
+              pointBorderColor: "transparent",
+              pointHoverBorderColor: "#9b51e0",
+              pointHoverBorderWidth: 3,
+              pointBorderWidth: 5,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              fill: false,
+              tension: 0.4,
+            },
+            {
+              label: "Order",
+              backgroundColor: "transparent",
+              borderColor: "#f2994a",
+              data: [180, 110, 140, 135, 100, 90, 145, 115, 100, 110, 115, 150],
+              pointBackgroundColor: "transparent",
+              pointHoverBackgroundColor: "#f2994a",
+              pointBorderColor: "transparent",
+              pointHoverBorderColor: "#f2994a",
+              pointHoverBorderWidth: 3,
+              pointBorderWidth: 5,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              fill: false,
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            tooltip: {
+              intersect: false,
+              backgroundColor: "#fbfbfb",
+              titleColor: "#8F92A1",
+              bodyColor: "#272727",
+              titleFont: {
+                size: 16,
+                family: "Plus Jakarta Sans",
+                weight: "400",
+              },
+              bodyFont: {
+                family: "Plus Jakarta Sans",
+                size: 16,
+              },
+              multiKeyBackground: "transparent",
+              displayColors: false,
+              padding: {
+                x: 30,
+                y: 15,
+              },
+              borderColor: "rgba(143, 146, 161, .1)",
+              borderWidth: 1,
+              enabled: true,
+            },
+            title: {
+              display: false,
+            },
+            legend: {
+              display: false,
+            },
+          },
+          layout: {
+            padding: {
+              top: 0,
+            },
+          },
+          responsive: true,
+          // maintainAspectRatio: false,
+          legend: {
+            display: false,
+          },
+          scales: {
+            y: {
+              grid: {
+                display: false,
+                drawTicks: false,
+                drawBorder: false,
+              },
+              ticks: {
+                padding: 35,
+              },
+              max: 350,
+              min: 50,
+            },
+            x: {
+              grid: {
+                drawBorder: false,
+                color: "rgba(143, 146, 161, .1)",
+                drawTicks: false,
+                zeroLineColor: "rgba(143, 146, 161, .1)",
+              },
+              ticks: {
+                padding: 20,
+              },
+            },
+          },
+        },
+      });
+      // =========== chart three end
+
+      // ================== chart four start
+      const ctx4 = document.getElementById("Chart4").getContext("2d");
+      const chart4 = new Chart(ctx4, {
+        type: "bar",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+          datasets: [
+            {
+              label: "",
+              backgroundColor: "#365CF5",
+              borderColor: "transparent",
+              borderRadius: 20,
+              borderWidth: 5,
+              barThickness: 20,
+              maxBarThickness: 20,
+              data: [600, 700, 1000, 700, 650, 800],
+            },
+            {
+              label: "",
+              backgroundColor: "#d50100",
+              borderColor: "transparent",
+              borderRadius: 20,
+              borderWidth: 5,
+              barThickness: 20,
+              maxBarThickness: 20,
+              data: [690, 740, 720, 1120, 876, 900],
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            tooltip: {
+              backgroundColor: "#F3F6F8",
+              titleColor: "#8F92A1",
+              titleFontSize: 12,
+              bodyColor: "#171717",
+              bodyFont: {
+                weight: "bold",
+                size: 16,
+              },
+              multiKeyBackground: "transparent",
+              displayColors: false,
+              padding: {
+                x: 30,
+                y: 10,
+              },
+              bodyAlign: "center",
+              titleAlign: "center",
+              enabled: true,
+            },
+            legend: {
+              display: false,
+            },
+          },
+          layout: {
+            padding: {
+              top: 0,
+            },
+          },
+          responsive: true,
+          // maintainAspectRatio: false,
+          title: {
+            display: false,
+          },
+          scales: {
+            y: {
+              grid: {
+                display: false,
+                drawTicks: false,
+                drawBorder: false,
+              },
+              ticks: {
+                padding: 35,
+                max: 1200,
+                min: 0,
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+                drawBorder: false,
+                color: "rgba(143, 146, 161, .1)",
+                zeroLineColor: "rgba(143, 146, 161, .1)",
+              },
+              ticks: {
+                padding: 20,
+              },
+            },
+          },
+        },
+      });
+        // =========== chart four end
     </script>
-</body>
+  </body>
 </html>
