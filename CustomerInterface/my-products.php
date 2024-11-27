@@ -1,3 +1,69 @@
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root";    
+$password = "";        
+$dbname = "grading, packaging, and transport management system"; 
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch categories
+$category_sql = "SELECT category, COUNT(*) AS count FROM products GROUP BY category";
+$category_result = $conn->query($category_sql);
+
+$categories_html = "";
+if ($category_result && $category_result->num_rows > 0) {
+    while ($category = $category_result->fetch_assoc()) {
+        $categories_html .= "<div class='category'>" . htmlspecialchars($category['category']) . " (" . $category['count'] . ")</div>";
+    }
+} else {
+    $categories_html = "<div class='category'>No categories found</div>";
+}
+
+// Fetch grading counts
+$grading_counts = ['Completed' => 0, 'In Progress' => 0, 'Pending Grading' => 0];
+$grading_sql = "SELECT grading_status, COUNT(*) AS count FROM products GROUP BY grading_status";
+$grading_result = $conn->query($grading_sql);
+
+if ($grading_result && $grading_result->num_rows > 0) {
+    while ($grading = $grading_result->fetch_assoc()) {
+        $grading_counts[$grading['grading_status']] = $grading['count'];
+    }
+}
+
+// Fetch products
+$product_sql = "SELECT product_id, product_name, grading_status, grading_date, transit_status FROM products";
+$product_result = $conn->query($product_sql);
+
+$products_html = "";
+if ($product_result && $product_result->num_rows > 0) {
+    while ($product = $product_result->fetch_assoc()) {
+        // Only show "Track" button if Transit Status is "In Transit" or "Not Shipped"
+        $track_button = "";
+        if ($product['transit_status'] == 'In Transit' || $product['transit_status'] == 'Not Shipped') {
+            $track_button = "<td><a href='tracking.html?product_id=" . $product['product_id'] . "' class='track-btn'>Track</a></td>";
+        }
+
+        $products_html .= "<tr>
+                            <td>" . htmlspecialchars($product['product_name']) . "</td>
+                            <td>" . htmlspecialchars($product['grading_status']) . "</td>
+                            <td>" . htmlspecialchars($product['grading_date']) . "</td>
+                            <td>" . htmlspecialchars($product['transit_status']) . "</td>
+                            $track_button
+                           </tr>";
+    }
+} else {
+    $products_html = "<tr><td colspan='5'>No products found</td></tr>";
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,31 +72,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <title>My Products - Food Grading and Transportation</title>
+    <title>My Products</title>
 </head>
 
 <body>
-
     <div class="top-container">
-        <!-- Navigation Bar -->
         <div class="nav">
             <div class="logo">
                 <i class='bx bxl-codepen'></i>
                 <a href="#">FoodGradePro</a>
             </div>
             <div class="nav-links">
-                <a href="index.html" clas ="active">Dashboard</a>
-                <a href="my-products.html" class="active">My Products</a>
-                <a href="resources.html">Resources</a>
+                <a href="index.html">Dashboard</a>
+                <a href="my-products.php" class="active">My Products</a>
+                <a href="resources.php">Resources</a>
                 <a href="payment.html">Payment</a>
-                
             </div>
             <div class="right-section">
                 <i class='bx bx-bell'></i>
                 <i class='bx bx-search'></i>
                 <div class="profile">
                     <div class="info">
-                        <img src="asset/54d93312db2faa24749c96aee9bdf8ba.jpg">
+                        <img src="asset/54d93312db2faa24749c96aee9bdf8ba.jpg" alt="Profile">
                         <div>
                             <a href="#">Alex Johnson</a>
                             <p>Customer</p>
@@ -57,124 +120,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Organic Apples</td>
-                            <td>Completed</td>
-                            <td>2024-11-20</td>
-                            <td>In Transit</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>Fresh Carrots</td>
-                            <td>In Progress</td>
-                            <td>2024-11-23</td>
-                            <td>Not Shipped</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>Grain Pack</td>
-                            <td>Completed</td>
-                            <td>2024-11-18</td>
-                            <td>Delivered</td>
-                            <td><button>View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Fresh Strawberries</td>
-                            <td>In Progress</td>
-                            <td>2024-11-22</td>
-                            <td>In Transit</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>Whole Wheat Flour</td>
-                            <td>Completed</td>
-                            <td>2024-11-19</td>
-                            <td>Delivered</td>
-                            <td><button>View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Free-range Eggs</td>
-                            <td>Pending</td>
-                            <td>2024-11-25</td>
-                            <td>Not Shipped</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>Almond Milk</td>
-                            <td>In Progress</td>
-                            <td>2024-11-24</td>
-                            <td>Not Shipped</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>Organic Bananas</td>
-                            <td>Completed</td>
-                            <td>2024-11-21</td>
-                            <td>Delivered</td>
-                            <td><button>View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Tomato Pack</td>
-                            <td>In Progress</td>
-                            <td>2024-11-23</td>
-                            <td>In Transit</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>Brown Rice</td>
-                            <td>Completed</td>
-                            <td>2024-11-17</td>
-                            <td>Delivered</td>
-                            <td><button>View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Organic Spinach</td>
-                            <td>In Progress</td>
-                            <td>2024-11-22</td>
-                            <td>In Transit</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>Cheddar Cheese</td>
-                            <td>Completed</td>
-                            <td>2024-11-19</td>
-                            <td>Delivered</td>
-                            <td><button>View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Gluten-free Pasta</td>
-                            <td>Pending</td>
-                            <td>2024-11-26</td>
-                            <td>Not Shipped</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>Organic Tomatoes</td>
-                            <td>In Progress</td>
-                            <td>2024-11-20</td>
-                            <td>In Transit</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
-                        <tr>
-                            <td>Brown Sugar</td>
-                            <td>Completed</td>
-                            <td>2024-11-18</td>
-                            <td>Delivered</td>
-                            <td><button>View</button></td>
-                        </tr>
-                        <tr>
-                            <td>Frozen Peas</td>
-                            <td>In Progress</td>
-                            <td>2024-11-21</td>
-                            <td>Not Shipped</td>
-                            <td><a href="tracking.html"><button>Track</button></a></td>
-                        </tr>
+                        <?= $products_html; ?>
                     </tbody>
                 </table>
             </div>
         </div>
-
-        
     </div>
 
     <div class="bottom-container">
@@ -183,10 +133,7 @@
             <div class="categories">
                 <h2>Product Categories</h2>
                 <div class="category-list">
-                    <div class="category">Fruits (12)</div>
-                    <div class="category">Vegetables (8)</div>
-                    <div class="category">Dairy (5)</div>
-                    <div class="category">Grains (3)</div>
+                    <?= $categories_html; ?>
                 </div>
             </div>
         
@@ -196,30 +143,18 @@
                 <div class="summary">
                     <div class="status">
                         <h3>Completed</h3>
-                        <p>15 products</p>
+                        <p><?= $grading_counts['Completed']; ?> products</p>
                     </div>
                     <div class="status">
                         <h3>In Progress</h3>
-                        <p>5 products</p>
+                        <p><?= $grading_counts['In Progress']; ?> products</p>
                     </div>
                     <div class="status">
                         <h3>Pending Grading</h3>
-                        <p>3 products</p>
+                        <p><?= $grading_counts['Pending Grading']; ?> products</p>
                     </div>
                 </div>
             </div>
-        
-            <!-- Recent Activity -->
-            <div class="recent--activity">
-                <h2>Recent Activity</h2>
-                <ul>
-                    <li>Organic Apples graded as "Grade A" on 2024-11-20</li>
-                    <li>Fresh Carrots shipped on 2024-11-21</li>
-                    <li>Grain Pack delivered successfully on 2024-11-18</li>
-                </ul>
-            </div>
-        
-            <!-- Shipping and Logistics -->
             <div class="logistics">
                 <h2>Shipping and Logistics</h2>
                 <table>
@@ -244,20 +179,26 @@
                     </tbody>
                 </table>
             </div>
-        
-            <!-- Notifications and Alerts -->
-            <div class="notifications">
-                <h2>Notifications and Alerts</h2>
-                <div class="alert">
-                    <p><strong>Delay Alert:</strong> Shipping for "Fresh Carrots" delayed by 2 days.</p>
-                </div>
-                <div class="alert">
-                    <p><strong>Grading Complete:</strong> "Organic Apples" graded as "Grade A".</p>
-                </div>
+        <!-- Notifications and Alerts -->
+        <div class="notifications">
+            <h2>Notifications and Alerts</h2>
+            <div class="alert">
+                <p><strong>Delay Alert:</strong> Shipping for "Fresh Carrots" delayed by 2 days.</p>
             </div>
+            <div class="alert">
+                <p><strong>Grading Complete:</strong> "Organic Apples" graded as "Grade A".</p>
+            </div>
+    
         </div>
 
+        </div>
+        <!-- Shipping and Logistics -->
+        
+    
+    </div>
+    
         <style>
+        
             .products--dashboard {
                 padding: 2rem; 
                 width: 100%; 
@@ -281,7 +222,7 @@
             .products--dashboard .grading--summary,
             .products--dashboard .recent--activity,
             .products--dashboard .logistics,
-            .products--dashboard .notifications {
+            {
                 margin-bottom: 2rem; 
             }
             
@@ -389,6 +330,16 @@
             
             /* Notifications */
             .products--dashboard .notifications .alert {
+                background-color: #fff3cd;
+                padding: 1rem;
+                border: 1px solid #ffeeba;
+                border-radius: 5px;
+                margin-bottom: 0.5rem;
+                font-size: 0.9rem;
+                color: #856404;
+            }
+               /* Notifications */
+               .products--dashboard .notifications .alert {
                 background-color: #fff3cd;
                 padding: 1rem;
                 border: 1px solid #ffeeba;

@@ -1,3 +1,38 @@
+
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root";     // Default username for XAMPP
+$password = "";         // Default password is empty for root in XAMPP
+$dbname = "grading, packaging, and transport management system";  // Make sure this is your actual database name
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Query to fetch resources
+$sql = "SELECT product_name, quantity FROM resources";
+$result = $conn->query($sql);
+
+$resources_html = "";
+if ($result->num_rows > 0) {
+    // Loop through the fetched data
+    while ($row = $result->fetch_assoc()) {
+        $resources_html .= "
+            <tr>
+                <td>" . $row['product_name'] . "</td>
+                <td>" . $row['quantity'] . "</td>
+            </tr>
+        ";
+    }
+} else {
+    $resources_html = "<tr><td colspan='2'>No resources found</td></tr>";
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
