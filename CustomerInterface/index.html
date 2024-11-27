@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Food Grading and Transportation Dashboard</title>
+</head>
+
+<body>
+
+    <div class="top-container">
+
+        <div class="nav">
+            <div class="logo">
+                <i class='bx bxl-codepen'></i>
+                <a href="#">GreenRoots</a>
+            </div>
+
+            <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="my-products.html">My Products</a> 
+                <a href="#">Reports</a>
+                <a href="#">Feedbacks</a>
+                <a href="support.html">Support</a>
+
+            </div>
+
+            <div class="right-section">
+                <i class='bx bx-bell' id="notification-bell"></i>
+    
+    <!-- Notification Dropdown -->
+    <div class="notification-dropdown" id="notification-dropdown">
+        <h4>Notifications</h4>
+        <ul>
+            <li class="completed">
+                <strong>Completed:</strong> Grading for "Organic Apples" finished (Grade A).
+            </li>
+            <li class="in-progress">
+                <strong>In Progress:</strong> Grading for "Fresh Carrots" is underway.
+            </li>
+            <li class="update">
+                <strong>Update:</strong> "Dairy Products" added for grading.
+            </li>
+            <li class="pending">
+                <strong>Pending:</strong> Grading for "Grain Packs" not started.
+            </li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bellIcon = document.getElementById("notification-bell");
+            const dropdown = document.getElementById("notification-dropdown");
+        
+            //Toggle dropdown visibility when bell icon is clicked
+            bellIcon.addEventListener("click", function () {
+                const isVisible = dropdown.style.display === "block";
+                dropdown.style.display = isVisible ? "none" : "block";
+            });
+        
+            // Close dropdown if clicked outside
+            document.addEventListener("click", function (event) {
+                if (!bellIcon.contains(event.target) && !dropdown.contains(event.target)) {
+                    dropdown.style.display = "none";
+                }
+            });
+        });
+        </script>
+        
+        <style>
+           
+            .right-section {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+            }
+            
+            .right-section i {
+                font-size: 1rem; 
+                color: #3EAF76;
+                transition: transform 0.2s ease;
+            }
+            
+            .right-section i:hover {
+                color: #2c945d;
+                transform: scale(1.1);
+            }
+            
+    
+            .notification-dropdown {
+                display: none; 
+                position: absolute;
+                top: 2.5rem;
+                right: 0;
+                width: 300px;
+                background: white;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                z-index: 1000;
+                padding: 1rem;
+
+                /* From https://css.glass */
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+            }
+            
+            .notification-dropdown h4 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                color: #333;
+            }
+            
+            .notification-dropdown ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .notification-dropdown ul li {
+                padding: 0.5rem 0;
+                font-size: 0.95rem;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .notification-dropdown ul li:last-child {
+                border-bottom: none;
+            }
+            
+            .notification-dropdown ul li.completed {
+                color: #2d7a2d;
+            }
+            
+            .notification-dropdown ul li.in-progress {
+                color: #ff9800;
+            }
+            
+            .notification-dropdown ul li.update {
+                color: #0056b3;
+            }
+            
+            .notification-dropdown ul li.pending {
+                color: #e53935;
+            }
+            </style>
+                
+            
+            
+                
+           
+
+                <div class="profile">
+                    <div class="info">
+                        <img src="asset/profile.png">
+                        <div>
+                            <a href="#">Alex Johnson</a>
+                            <p>Customer</p>
+                        </div>
+                    </div>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="status">
+            <div class="header">
+                <h4 id="big">Your Dashboard</h4>
+                <h4 id="small">Weekly Updates</h4>
+            </div>
+
+            <div class="items-list">
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Product Grading Status</h5>
+                            <p>Completed Products: 15</p>
+                            <p>Remaining Products: 5</p>
+
+                        </div>
+                        <i class='bx bx-data'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Order Fulfillment Status</h5>
+                            <p>Ready for Dispatch: 15 items</p>
+                            <p>Pending Dispatch: 5 items</p>
+
+                        </div>
+                        <i class='bx bx-shopping-bag'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="info">
+                        <div>
+                            <h5>Transportation Progress</h5>
+                            <p>Products in Transit: 3</p>
+                            <p>Delivery ETA: 2 Days</p>
+                
+                        </div>
+                        <i class='bx bxs-truck'></i>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <canvas class="activity-chart"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom-container">
+
+        <div class="customer-dashboard">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h2>Customer Dashboard</h2>
+                <p>Select the foods you want to grade and manage your activities efficiently.</p>
+            </div>
+        
+           
+            <div class="Product-selection">
+                <h4>Select Product to Grade</h4>
+                <div class="Product-options">
+                    <label>
+                        <input type="checkbox" name="food" value="Organic Apples">
+                        Organic Apples
+                    </label>
+                    <label>
+                        <input type="checkbox" name="food" value="Fresh Carrots">
+                        Fresh Carrots
+                    </label>
+                    <label>
+                        <input type="checkbox" name="food" value="Dairy Products">
+                        Dairy Products
+                    </label>
+                    <label>
+                        <input type="checkbox" name="food" value="Grain Packs">
+                        Grain Packs
+                    </label>
+                    <label>
+                        <input type="checkbox" name="food" value="Fresh Vegetables">
+                        Fresh Vegetables
+                    </label>
+                    <label>
+                        <input type="checkbox" name="food" value="Tomatoes">
+                        Tomatoes
+                    </label>
+                    <label>
+                        <input type="checkbox" name="food" value="Oranges">
+                        Oranges
+                    </label>
+                    <label>
+                        <input type="checkbox" name="food" value="Onions">
+                        Onions
+                    </label>
+                    
+                </div>
+                
+                <button class="grade-btn">Grade Selected Foods</button>
+                
+            </div>
+        
+            <div class="recent-activities">
+                <h4>Recent Activities</h4>
+                <ul id="recent-activities-list">
+                </ul>
+            </div>
+        
+            <script>
+                document.querySelector('.grade-btn').addEventListener('click', function () {
+                    const checkboxes = document.querySelectorAll('.Product-options input[type="checkbox"]:checked');
+                    const recentActivitiesList = document.getElementById('recent-activities-list');
+        
+                    if (checkboxes.length === 0) {
+                        alert('Please select at least one food to grade.');
+                        return;
+                    }
+        
+                    const currentDate = new Date().toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                    });
+        
+                    checkboxes.forEach(checkbox => {
+                        const foodName = checkbox.value;
+                        const listItem = document.createElement('li');
+                        listItem.textContent = ` "${foodName}" is added to the list on ${currentDate}.`;
+                        recentActivitiesList.appendChild(listItem);
+                        checkbox.checked = false; // Uncheck the checkbox after grading
+                    });
+                });
+            </script>
+        
+            
+            <div class="notifications">
+                <h4>Notifications</h4>
+                <div class="alert success">
+                    <p><strong>Success:</strong> Your recent grading report is ready to download.</p>
+                </div>
+                <div class="alert info">
+                    <p><strong>Reminder:</strong> Join the upcoming "Cold Chain Management Webinar" on Nov 26.</p>
+                </div>
+            </div>
+        
+            
+            <div class="quick-links">
+                <h4>Quick Links</h4>
+                <div class="links">
+                    <a href="https://www.youtube.com/watch?v=n7jWt7IF3QY&ab_channel=SafetyVideos.com">Grading Tutorials</a>
+                    <a href="#" id="download-report">Download Reports</a>
+
+                                        
+                 
+                    <a href="support.html">Help & Support</a>
+                </div>
+            </div>
+        </div>
+        <style>
+            /* General Dashboard Styling */
+            .customer-dashboard {
+                width: 100%;
+                height: 100%; 
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                padding: 2rem;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem; 
+            }
+            
+            
+            .dashboard-header {
+                text-align: center;
+            }
+            
+            .dashboard-header h2 {
+                font-size: 2rem;
+                color: #3EAF76;
+            }
+            
+            .dashboard-header p {
+                font-size: 1rem;
+                color: #666;
+            }
+            
+            
+            .food-selection {
+                background: white;
+                padding: 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .food-selection h4 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                color: #333;
+            }
+            
+            .food-options {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+            
+            .food-options label {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 1rem;
+            }
+            
+            .food-options input[type="checkbox"] {
+                width: 1rem;
+                height: 1rem;
+            }
+            
+            .grade-btn {
+                margin-top: 1rem;
+                padding: 0.75rem 2rem;
+                background-color: #3EAF76;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 1rem;
+                cursor: pointer;
+                display: block;
+                margin-left: auto;
+            }
+            
+            .grade-btn:hover {
+                background-color: #2c945d;
+            }
+            
+            
+            .recent-activities {
+                background: white;
+                padding: 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .recent-activities ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .recent-activities ul li {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #eee;
+                color: #333;
+            }
+            
+            .recent-activities ul li:last-child {
+                border-bottom: none;
+            }
+            
+            
+            .notifications {
+                background: white;
+                padding: 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .notifications .alert {
+                padding: 1rem;
+                border-radius: 5px;
+                margin-bottom: 1rem;
+            }
+            
+            .notifications .alert.success {
+                background-color: #eaffea;
+                color: #2d7a2d;
+            }
+            
+            .notifications .alert.info {
+                background-color: #eef5ff;
+                color: #0056b3;
+            }
+            
+            
+            .quick-links {
+                background: white;
+                padding: 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .quick-links .links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .quick-links .links a {
+                padding: 0.75rem 1.5rem;
+                background-color: #3EAF76;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-size: 1rem;
+            }
+            
+            .quick-links .links a:hover {
+                background-color: #2c945d;
+            }
+            </style>
+            
+                        
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
