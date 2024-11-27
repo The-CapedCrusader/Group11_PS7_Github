@@ -1,0 +1,230 @@
+<!doctype html> 
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grading Form: Harvested Produce</title>
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .top-banner {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .top-banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Centering the form container */
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    /* Form Section Styling */
+    .form-section {
+      background-color: #ffffff;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2d3e50;
+    }
+
+    /* Form Input Styling */
+    .form-label {
+      font-size: 1rem;
+      color: #495057;
+    }
+
+    .form-control {
+      border-radius: 8px;
+      border: 1px solid #ced4da;
+      padding: 0.75rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    /* Specific Input Colors */
+    .form-control:focus {
+      border-color: #28a745;
+      box-shadow: 0 0 5px rgba(40, 167, 69, 0.25);
+    }
+
+    .btn-primary {
+      background-color: #28a745;
+      border-color: #28a745;
+      color: white;
+      font-size: 1.1rem;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+
+    /* Navbar Styling */
+    nav {
+      background-color: #aab2a8;
+      padding: 1rem 0;
+    }
+
+    .navbar-nav .nav-link {
+      color: white;
+      font-size: 1rem;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffcc00;
+    }
+
+    /* Styling for the Image Section */
+    .img-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .img-section img {
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+    }
+
+  </style>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- Top Banner Image Section -->
+  <div class="top-banner">
+    <img src="banner-image.jpg" alt="Harvest Produce Banner">
+  </div>
+
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand mb-0 h1">
+        <img class="d-inline-block align-top rounded-circle" src="kiwi.PNG" width="30" height="30" alt="Logo">
+        <b> Green Roots </b>
+      </a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav ms-auto me-5 grid gap-5 list-unstyled">
+          <li class="nav-item"><a class="nav-link" href="NutritionistDashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="GradingofPackedproduce.html">Packed Produce Grading</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">View Grading Criterias</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <!-- Form Section -->
+    <div class="form-section">
+      <h2>Grading Form for Harvested Produce</h2>
+      <form action="#" method="post" class="w-100">
+        
+        <!-- Smoothness Section -->
+        <div class="mb-3">
+          <label for="smoothness" class="form-label">Smoothness</label>
+          <input type="text" class="form-control" id="smoothness" name="smoothness" placeholder="Enter smoothness (e.g., Smooth, Rough)" required>
+        </div>
+
+        <!-- Colour Section -->
+        <div class="mb-3">
+          <label for="colour" class="form-label">Colour</label>
+          <input type="text" class="form-control" id="colour" name="colour" placeholder="Enter colour description" required>
+        </div>
+
+        <!-- Brix Section -->
+        <div class="mb-3">
+          <label for="brix" class="form-label">Brix (%)</label>
+          <input type="number" class="form-control" id="brix" name="brix" placeholder="Enter Brix value" step="0.1" required>
+        </div>
+
+        <!-- Crop Health Section -->
+        <div class="mb-3">
+          <label for="cropHealth" class="form-label">Crop Health</label>
+          <input type="text" class="form-control" id="cropHealth" name="cropHealth" placeholder="Enter crop health status (e.g., Healthy, Diseased)" required>
+        </div>
+
+        <!-- Pesticide Remain Section -->
+        <div class="mb-3">
+          <label for="pesticideRemain" class="form-label">Pesticide Remain (ppm)</label>
+          <input type="number" class="form-control" id="pesticideRemain" name="pesticideRemain" placeholder="Enter pesticide remain (ppm)" step="0.1" required>
+        </div>
+
+        <!-- Fungal Growth Section -->
+        <div class="mb-3">
+          <label for="fungalGrowth" class="form-label">Fungal Growth</label>
+          <input type="text" class="form-control" id="fungalGrowth" name="fungalGrowth" placeholder="Enter fungal growth status (e.g., No growth, Mild growth)" required>
+        </div>
+
+        <!-- Grade Received Section -->
+        <div class="mb-3">
+          <label for="gradeReceived" class="form-label">Grade Received</label>
+          <select class="form-control" id="gradeReceived" name="gradeReceived" required>
+            <option value="A">Grade A</option>
+            <option value="B">Grade B</option>
+            <option value="C">Grade C</option>
+          </select>
+        </div>
+
+        <!-- Weather Conditions Section -->
+        <div class="mb-3">
+          <label for="weatherConditions" class="form-label">Weather Conditions</label>
+          <input type="text" class="form-control" id="weatherConditions" name="weatherConditions" placeholder="Enter weather conditions during growing period" required>
+        </div>
+
+        <!-- Pesticides Used Section -->
+        <div class="mb-3">
+          <label for="pesticidesUsed" class="form-label">Pesticides Used</label>
+          <input type="text" class="form-control" id="pesticidesUsed" name="pesticidesUsed" placeholder="Enter pesticides used" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit Grading Report</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Image Section -->
+  <div class="img-section">
+    <img src="Capture.PNG" alt="GRAPH HERE">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>

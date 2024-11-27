@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nutritionist Dashboard</title>
+  <style>
+    /* Dashboard Layout */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #4CAF50;
+      padding: 15px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: inline-block;
+    }
+
+    .navbar a:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .tabs button {
+      background-color: #f8f9fa;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .tabs button:hover {
+      background-color: #ddd;
+    }
+
+    .tabs button.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table th, table td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    table th {
+      background-color: #f2f2f2;
+    }
+
+    .form-container {
+      margin-top: 20px;
+    }
+
+    .form-container input, .form-container textarea, .form-container select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+
+    .form-container button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #45a049;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <a href="#">Green Roots</a>
+    <a href="#"> My Profile </a>
+    <a href="GradingofPackedproduce.html"> Form for Packaged Produce</a>
+    <a href="GradingHARVESTEDproduce.html"> Form for Harvested Produce</a>
+    <a href="#">Logout</a>
+  </nav>
+
+  <div class="container">
+    <h2>Nutritionist Dashboard</h2>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button id="harvestedTab" class="active" onclick="switchTab('harvested')">Harvested Produce</button>
+      <button id="packagedTab" onclick="switchTab('packaged')">Packaged Produce</button>
+    </div>
+
+    <!-- Tab Content -->
+
+    <!-- Harvested Produce Tab -->
+    <div id="harvestedTabContent" class="tab-content active">
+      <h3>Harvested Produce</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Produce Name</th>
+            <th>Nutritional Value</th>
+            <th>Harvest Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example row, add more dynamically -->
+          <tr>
+            <td>Carrot</td>
+            <td>Calories: 41, Vitamin A: 112% of daily value</td>
+            <td>2024-11-20</td>
+            <td><button>Edit</button> <button>Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Form to Add New Harvested Produce -->
+      <div class="form-container">
+        <h4>Add New Harvested Produce</h4>
+        <form action="#" method="post">
+          <label for="harvestedProduceName">Produce Name</label>
+          <input type="text" id="harvestedProduceName" name="harvestedProduceName" placeholder="Enter produce name" required>
+
+          <label for="harvestedNutritionalValue">Nutritional Value</label>
+          <textarea id="harvestedNutritionalValue" name="harvestedNutritionalValue" rows="3" placeholder="Enter nutritional value" required></textarea>
+
+          <label for="harvestDate">Harvest Date</label>
+          <input type="date" id="harvestDate" name="harvestDate" required>
+
+          <button type="submit">Add Harvested Produce</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Packaged Produce Tab -->
+    <div id="packagedTabContent" class="tab-content">
+      <h3>Packaged Produce</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Produce Name</th>
+            <th>Nutritional Value</th>
+            <th>Packaging Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example row, add more dynamically -->
+          <tr>
+            <td>Packaged Lettuce</td>
+            <td>Calories: 15, Vitamin A: 18% of daily value</td>
+            <td>2024-11-22</td>
+            <td><button>Edit</button> <button>Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Form to Add New Packaged Produce -->
+      <div class="form-container">
+        <h4>Add New Packaged Produce</h4>
+        <form action="#" method="post">
+          <label for="packagedProduceName">Produce Name</label>
+          <input type="text" id="packagedProduceName" name="packagedProduceName" placeholder="Enter produce name" required>
+
+          <label for="packagedNutritionalValue">Nutritional Value</label>
+          <textarea id="packagedNutritionalValue" name="packagedNutritionalValue" rows="3" placeholder="Enter nutritional value" required></textarea>
+
+          <label for="packagingDate">Packaging Date</label>
+          <input type="date" id="packagingDate" name="packagingDate" required>
+
+          <button type="submit">Add Packaged Produce</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Function to switch between tabs
+    function switchTab(tab) {
+      const harvestedTabContent = document.getElementById('harvestedTabContent');
+      const packagedTabContent = document.getElementById('packagedTabContent');
+      const harvestedTab = document.getElementById('harvestedTab');
+      const packagedTab = document.getElementById('packagedTab');
+
+      if (tab === 'harvested') {
+        harvestedTabContent.classList.add('active');
+        packagedTabContent.classList.remove('active');
+        harvestedTab.classList.add('active');
+        packagedTab.classList.remove('active');
+      } else {
+        harvestedTabContent.classList.remove('active');
+        packagedTabContent.classList.add('active');
+        harvestedTab.classList.remove('active');
+        packagedTab.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
