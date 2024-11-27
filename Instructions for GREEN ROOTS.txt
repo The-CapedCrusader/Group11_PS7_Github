@@ -1,0 +1,4 @@
+Map codes 
+RICE001 (Basmati Rice from Rajshahi)
+JUTE002 (Raw Jute from Khulna)
+TEA003 (Green Tea from Sylhet)
