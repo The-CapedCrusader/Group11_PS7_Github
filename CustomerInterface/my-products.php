@@ -43,22 +43,15 @@ $product_result = $conn->query($product_sql);
 $products_html = "";
 if ($product_result && $product_result->num_rows > 0) {
     while ($product = $product_result->fetch_assoc()) {
-        // Only show "Track" button if Transit Status is "In Transit" or "Not Shipped"
-        $track_button = "";
-        if ($product['transit_status'] == 'In Transit' || $product['transit_status'] == 'Not Shipped') {
-            $track_button = "<td><a href='tracking.html?product_id=" . $product['product_id'] . "' class='track-btn'>Track</a></td>";
-        }
-
         $products_html .= "<tr>
                             <td>" . htmlspecialchars($product['product_name']) . "</td>
                             <td>" . htmlspecialchars($product['grading_status']) . "</td>
                             <td>" . htmlspecialchars($product['grading_date']) . "</td>
                             <td>" . htmlspecialchars($product['transit_status']) . "</td>
-                            $track_button
                            </tr>";
     }
 } else {
-    $products_html = "<tr><td colspan='5'>No products found</td></tr>";
+    $products_html = "<tr><td colspan='4'>No products found</td></tr>";
 }
 
 $conn->close();
@@ -79,8 +72,8 @@ $conn->close();
     <div class="top-container">
         <div class="nav">
             <div class="logo">
-                <i class='bx bxl-codepen'></i>
-                <a href="#">FoodGradePro</a>
+                <img src="asset/leaf-design.png" style="width: 40px; height: auto;">
+                <a href="#">GreenRoots</a>
             </div>
             <div class="nav-links">
                 <a href="index.html">Dashboard</a>
@@ -90,12 +83,11 @@ $conn->close();
             </div>
             <div class="right-section">
                 <i class='bx bx-bell'></i>
-                <i class='bx bx-search'></i>
                 <div class="profile">
                     <div class="info">
-                        <img src="asset/54d93312db2faa24749c96aee9bdf8ba.jpg" alt="Profile">
+                    <img src="asset/profile.png">
                         <div>
-                            <a href="#">Alex Johnson</a>
+                            <a href="#">Syed Wayes</a>
                             <p>Customer</p>
                         </div>
                     </div>
@@ -116,7 +108,6 @@ $conn->close();
                             <th>Grading Status</th>
                             <th>Grade Date</th>
                             <th>Transit Status</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -192,7 +183,6 @@ $conn->close();
         </div>
 
         </div>
-        <!-- Shipping and Logistics -->
         
     
     </div>
@@ -232,7 +222,12 @@ $conn->close();
                 color: #3EAF76; 
                 margin-bottom: 1rem; 
             }
-            
+            .scrollable-table {
+                  max-height: 200px;  
+                  overflow-y: auto;   
+                  border: 1px solid #ddd;  
+            }   
+
             /* Category List */
             .products--dashboard .categories .category-list {
                 display: flex;
@@ -353,7 +348,7 @@ $conn->close();
                 
         
         
-            </div>
+</div>
 
 
     
