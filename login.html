@@ -8,6 +8,7 @@
       crossorigin="anonymous"
     ></script>
     <title>Sign in & Sign up Form</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
@@ -130,9 +131,9 @@
         justify-content: center;
         align-items: center;
         margin: 0 0.45rem;
-        color: #333;
+        color: #198754;
         border-radius: 50%;
-        border: 1px solid #333;
+        border: 1px solid #198754;
         text-decoration: none;
         font-size: 1.1rem;
         transition: 0.3s;
@@ -145,7 +146,7 @@
 
       .btn {
         width: 150px;
-        background-color: #5995fd;
+        background-color: #198754;
         border: none;
         outline: none;
         height: 49px;
@@ -159,7 +160,7 @@
       }
 
       .btn:hover {
-        background-color: #4d84e2;
+        background-color: #198754;
       }
       .panels-container {
         position: absolute;
@@ -179,7 +180,7 @@
         top: -10%;
         right: 48%;
         transform: translateY(-50%);
-        background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+        background-image: linear-gradient(-45deg, #90E4C1 0%, #90E4C1 100%);
         transition: 1.8s ease-in-out;
         border-radius: 50%;
         z-index: 6;
@@ -425,19 +426,99 @@
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="Password" />
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+            <div class="user-type-selection">
+              <h2 class="title">Select User Type</h2>
+              <div class="user-type-buttons">
+                <button class="user-type-btn" data-type="government">
+                  <i class="fas fa-landmark"></i>
+                  Government Specialist
+                </button>
+                <button class="user-type-btn" data-type="retailer">
+                  <i class="fas fa-store"></i>
+                  Retailer
+                </button>
+                <button class="user-type-btn" data-type="producer">
+                  <i class="fas fa-industry"></i>
+                  Producer
+                </button>
+                <button class="user-type-btn" data-type="customer">
+                  <i class="fas fa-user"></i>
+                  Customer
+                </button>
+              </div>
+            </div>
+            
+            <style>
+            .user-type-selection {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 100%;
+              max-width: 500px;
+              padding: 20px;
+            }
+            
+            .user-type-buttons {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 15px;
+              width: 100%;
+              margin-top: 20px;
+            }
+            
+            .user-type-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 15px;
+              background-color: #f0f0f0;
+              border: none;
+              border-radius: 10px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: 0.3s;
+              gap: 10px;
+            }
+            
+            .user-type-btn i {
+              font-size: 1.2rem;
+            }
+            
+            .user-type-btn:hover {
+              background-color: #198754;
+              color: white;
+            }
+            
+            .user-type-btn.selected {
+              background-color: #198754;
+              color: white;
+            }
+            </style>
+            
+            <a href="index.html" class="btn solid" style="
+    display: inline-block;
+    width: 150px;
+    max-width: 90%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    responsive: true;
+">Login</a>
             <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
+            <div class="social-media" style="display: flex; gap: 10px;">
+              <a href="#" class="social-icon" style="text-decoration: none; font-size: 24px; color: #000;">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a href="#" class="social-icon" style="text-decoration: none; font-size: 24px; color: #000;">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a href="#" class="social-icon" style="text-decoration: none; font-size: 24px; color: #000;">
                 <i class="fab fa-google"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a href="#" class="social-icon" style="text-decoration: none; font-size: 24px; color: #000;">
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
@@ -456,7 +537,86 @@
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="Password" />
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <div class="user-type-selection">
+              <h2 class="title">Select User Type</h2>
+              <div class="user-type-buttons">
+                <button class="user-type-btn" data-type="government">
+                  <i class="fas fa-landmark"></i>
+                  Government Specialist
+                </button>
+                <button class="user-type-btn" data-type="retailer">
+                  <i class="fas fa-store"></i>
+                  Retailer
+                </button>
+                <button class="user-type-btn" data-type="producer">
+                  <i class="fas fa-industry"></i>
+                  Producer
+                </button>
+                <button class="user-type-btn" data-type="customer">
+                  <i class="fas fa-user"></i>
+                  Customer
+                </button>
+              </div>
+            </div>
+            
+            <style>
+            .user-type-selection {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 100%;
+              max-width: 500px;
+              padding: 20px;
+            }
+            
+            .user-type-buttons {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 15px;
+              width: 100%;
+              margin-top: 20px;
+            }
+            
+            .user-type-btn {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 15px;
+              background-color: #f0f0f0;
+              border: none;
+              border-radius: 10px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: 0.3s;
+              gap: 10px;
+            }
+            
+            .user-type-btn i {
+              font-size: 1.2rem;
+            }
+            
+            .user-type-btn:hover {
+              background-color: #198754;
+              color: white;
+            }
+            
+            .user-type-btn.selected {
+              background-color: #198754;
+              color: white;
+            }
+            </style>
+            <a href="index.html" class="btn solid" style="
+            display: inline-block;
+            width: 150px;
+            max-width: 90%;
+            text-align: center;
+            padding: 10px;
+            margin: 10px auto;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            responsive: true;
+        ">Sign Up</a>
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -478,29 +638,27 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>New here ?</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
-            </p>
+            
+            <h2 class="title">New to Agricultural Quality Management?</h2>
+            
             <button class="btn transparent" id="sign-up-btn">
               Sign up
+              <i class="fas fa-user-plus"></i>  
             </button>
           </div>
-          <img src="img/log.svg" class="image" alt="" />
+          <img src="img/log.png" class="image" alt="" />
         </div>
         <div class="panel right-panel">
           <div class="content">
-            <h3>One of us ?</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              laboriosam ad deleniti.
-            </p>
+            
+            <h2 class="title">One of us?</h2>
+            
             <button class="btn transparent" id="sign-in-btn">
-              Sign in
+              Sign in 
+              <i class="fas fa-user-plus"></i>  
             </button>
           </div>
-          <img src="img/register.svg" class="image" alt="" />
+          <img src="img/register.png" class="image" alt="" />
         </div>
       </div>
     </div>
